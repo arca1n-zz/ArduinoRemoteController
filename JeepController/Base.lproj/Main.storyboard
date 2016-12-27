@@ -1,26 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-TT-Gle">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="IRF-BB-11B"/>
+                                    <constraint firstAttribute="width" constant="64" id="k0e-Kf-R5h"/>
+                                </constraints>
+                                <state key="normal" image="headlight"/>
+                                <state key="selected" image="headlight-on"/>
+                                <connections>
+                                    <action selector="handleHeadlightTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VoW-oS-43x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG3-xW-w90">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="K93-YB-4K2"/>
+                                    <constraint firstAttribute="height" constant="64" id="gHo-Ob-HS8"/>
+                                </constraints>
+                                <state key="normal" image="Bluetooth-search"/>
+                                <connections>
+                                    <action selector="handleScanForPeripherals:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3F1-g1-hJg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="hG3-xW-w90" secondAttribute="leading" id="BCE-wD-8g6"/>
+                            <constraint firstItem="hG3-xW-w90" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Myg-Xb-kWP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4zl-TT-Gle" secondAttribute="trailing" constant="5" id="uJI-TX-eTl"/>
+                            <constraint firstItem="4zl-TT-Gle" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="wH3-B4-n0D"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.18140929535232" y="136.80000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bluetooth-search" width="64" height="64"/>
+        <image name="headlight" width="467" height="467"/>
+        <image name="headlight-on" width="233" height="233"/>
+    </resources>
 </document>
